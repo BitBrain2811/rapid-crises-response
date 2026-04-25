@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Alert | CrisisControl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <header class="page-header">
+            <h1>Create Emergency Alert</h1>
+            <p class="subtitle">Broadcast an emergency incident to the command center</p>
+        </header>
+
+        <div class="glowing-container">
+            <div class="card" style="max-width: 650px;">
+                <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-secondary);"></i> Emergency Details</h2>
+                <form id="createAlertForm">
+                    <div class="input-group">
+                        <label for="type">Incident Type</label>
+                        <select id="type" required>
+                            <option value="Fire">Fire</option>
+                            <option value="Medical">Medical</option>
+                            <option value="Police">Police</option>
+                            <option value="Disaster">Disaster</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="severity">Severity</label>
+                        <select id="severity" required>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="e.g., Sector 4, Main Block" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Description</label>
+                        <textarea id="message" rows="3" placeholder="Provide details of the emergency..." required></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">
+                        SOS INSTANT ALERT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

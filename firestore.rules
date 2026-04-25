@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Alert Validation
+    function isValidAlert(data) {
+      return data.keys().hasAll(['type', 'severity', 'message', 'status', 'location']) &&
+             data.type in ['FIRE', 'MEDICAL', 'POLICE', 'DISASTER', 'OTHER'] &&
+             data.severity in ['LOW', 'MEDIUM', 'HIGH', 'CRITICAL'] &&
+             data.status in ['PENDING', 'ACTIVE', 'RESPONDING', 'RESOLVED'] &&
+             data.message is string && data.message.size() <= 1000 &&
+             data.location.latitude is number &&
+             data.location.longitude is number;
+    }
+
+    // Alerts Collection
+    match /alerts/{alertId} {
+      // Allow creation by anyone (GUESTS/SOS/STAFF) but validate content
+      allow create: if isValidAlert(incoming()) && (incoming().createdAt == request.time || incoming().createdAt is number);
+      
+      // Allow read/list for authorized responders or users (simplified for public demo)
+      allow read, list: if true;
+
+      // Only allow status updates
+      allow update: if (
+        incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt']) &&
+        incoming().status in ['PENDING', 'ACTIVE', 'RESPONDING', 'RESOLVED']
+      );
+
+      allow delete: if false; // Audit trail preservation
+    }
+    
+    // System status
+    match /system/{statusId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

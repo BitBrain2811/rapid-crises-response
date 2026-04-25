@@ -1,0 +1,6 @@
+{
+  "name": "CrisisControl: Hotel Emergency Response",
+  "description": "A rapid crisis management system for hotels featuring real-time SOS alerts, geospatial tracking, and an emergency coordination dashboard.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

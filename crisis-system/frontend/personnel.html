@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnel Management | CrisisControl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <header class="page-header">
+            <h1>Personnel Management</h1>
+            <p class="subtitle">Assign and track staff members during emergencies</p>
+        </header>
+
+        <div class="card">
+            <h2>Active Staff Members</h2>
+            <div class="table-container mt-4">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Assigned Task</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Officer Johnson</strong></td>
+                            <td>Police</td>
+                            <td><span class="badge low">Available</span></td>
+                            <td>-</td>
+                            <td><button class="primary-btn" style="padding: 6px 12px; font-size: 0.8rem;">Assign</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Smith</strong></td>
+                            <td>Medical</td>
+                            <td><span class="badge high">Busy</span></td>
+                            <td>Sector 4 Incident (INC-001)</td>
+                            <td><button class="primary-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #3b82f6;">Update</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unit 4A</strong></td>
+                            <td>Fire Response</td>
+                            <td><span class="badge low">Available</span></td>
+                            <td>-</td>
+                            <td><button class="primary-btn" style="padding: 6px 12px; font-size: 0.8rem;">Assign</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Alpha</strong></td>
+                            <td>Disaster Relief</td>
+                            <td><span class="badge medium">En Route</span></td>
+                            <td>Main Block Evacuation</td>
+                            <td><button class="primary-btn" style="padding: 6px 12px; font-size: 0.8rem; background: #3b82f6;">Update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | CrisisControl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <header class="page-header">
+            <h1>System Settings</h1>
+            <p class="subtitle">Manage admin profile and system configurations</p>
+        </header>
+
+        <div class="grid-cards">
+            <div class="card">
+                <h2>Admin Profile</h2>
+                <form onsubmit="event.preventDefault(); alert('Profile updated');">
+                    <div class="input-group">
+                        <label>Admin Name</label>
+                        <input type="text" value="System Administrator" />
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" value="admin@crisiscontrol.local" />
+                    </div>
+                    <button type="submit" class="primary-btn">Save Profile</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Notification Preferences</h2>
+                <form onsubmit="event.preventDefault(); alert('Preferences saved');">
+                    <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="email-notif" checked style="width: auto;">
+                        <label for="email-notif" style="margin: 0; color: white;">Email Alerts for Critical Incidents</label>
+                    </div>
+                    <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="sms-notif" checked style="width: auto;">
+                        <label for="sms-notif" style="margin: 0; color: white;">SMS Notifications for Dispatch</label>
+                    </div>
+                    <div class="input-group" style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="sound-notif" checked style="width: auto;">
+                        <label for="sound-notif" style="margin: 0; color: white;">Browser Sound Alarms</label>
+                    </div>
+                    <button type="submit" class="primary-btn" style="margin-top: 15px;">Update Preferences</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>

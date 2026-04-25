@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CrisisControl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <header class="page-header">
+            <h1>Admin Dashboard</h1>
+            <p class="subtitle">System overview and critical metrics</p>
+        </header>
+
+        <div class="grid-cards">
+            <div class="card">
+                <h3 style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">Total Alerts</h3>
+                <div style="font-size: 2.5rem; font-weight: 700; margin-top: 10px;" id="stat-total">0</div>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">Active Emergencies</h3>
+                <div style="font-size: 2.5rem; font-weight: 700; margin-top: 10px; color: #ef4444;" id="stat-active">0</div>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">Resolved Cases</h3>
+                <div style="font-size: 2.5rem; font-weight: 700; margin-top: 10px; color: #10b981;" id="stat-resolved">0</div>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase;">Available Personnel</h3>
+                <div style="font-size: 2.5rem; font-weight: 700; margin-top: 10px; color: #3b82f6;">18</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Recent Alerts</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Location</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recent-alerts-table">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

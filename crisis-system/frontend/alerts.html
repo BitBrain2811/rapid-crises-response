@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Logs | CrisisControl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <header class="page-header">
+            <h1>Emergency Logs</h1>
+            <p class="subtitle">Complete history of all reported incidents</p>
+        </header>
+
+        <div class="card">
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <select id="filter-type" style="max-width: 200px;">
+                    <option value="All">All Types</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Police">Police</option>
+                    <option value="Disaster">Disaster</option>
+                </select>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-alerts-table">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

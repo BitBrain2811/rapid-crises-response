@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "Alert": {
+      "title": "Emergency Alert",
+      "description": "A live emergency alert triggered by staff or SOS",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["FIRE", "MEDICAL", "POLICE", "DISASTER", "OTHER"] },
+        "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+        "message": { "type": "string" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": { "type": "number" },
+            "longitude": { "type": "number" },
+            "roomNumber": { "type": "string" }
+          }
+        },
+        "status": { "type": "string", "enum": ["PENDING", "ACTIVE", "RESPONDING", "RESOLVED"] },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["type", "severity", "message", "status", "createdAt"]
+    },
+    "AppStatus": {
+      "title": "System Status",
+      "description": "Global status indicators for the hotel response team",
+      "type": "object",
+      "properties": {
+        "operationalMode": { "type": "string", "enum": ["NORMAL", "ELEVATED", "LOCKDOWN"] },
+        "lastUpdated": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "alerts": {
+      "schema": "Alert",
+      "description": "Active and historical emergency alerts"
+    },
+    "system": {
+      "schema": "AppStatus",
+      "description": "Global system state"
+    }
+  }
+}
