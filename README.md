@@ -1,6 +1,6 @@
-# CrisisControl: Hotel Emergency Response System
+# Rapid Crisis Response System / CrisisControl
 
-CrisisControl is a high-availability, real-time dashboard designed for hotel security and management to respond to incidents within seconds.
+CrisisControl is a high-availability, real-time dashboard designed for hotel security and management to respond to incidents within seconds. The Rapid Crisis Response System is a smart web-based application designed to quickly detect, manage, and respond to emergency situations such as fires, medical emergencies, and security threats.
 
 ## Core Features
 
